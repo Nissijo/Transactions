@@ -1,0 +1,148 @@
+%md
+### Queries for 835 transactions
+%md
+##### Distinct payment method code
+Select distinct BPR_FinancialInformation.PaymentMethodCode_04 from transaction;
+select BPR_FinancialInformation.PaymentMethodCode_04,count(*) AS PaymentMethodCode from transaction group by BPR_FinancialInformation.PaymentMethodCode_04 order by BPR_FinancialInformation.PaymentMethodCode_04 desc;
+create widget dropdown PaymentMethod default "CHK"
+choices
+select distinct BPR_FinancialInformation.PaymentMethodCode_04
+from transaction 
+
+%md
+##### Distinct creditordebitflagcode
+Select distinct BPR_FinancialInformation.CreditorDebitFlagCode_03 from transaction;
+%md
+##### Payment method equal to CHK and not equal to CHK
+Select * from transaction where BPR_FinancialInformation.PaymentMethodCode_04=='CHK';
+Select * from transaction where BPR_FinancialInformation.PaymentMethodCode_04!='CHK';
+%md
+##### Distinct values of Claim Status Code
+select distinct CLP_ClaimPaymentInformation.ClaimStatusCode_02 from claim_payment_info;
+select CLP_ClaimPaymentInformation.ClaimStatusCode_02,count(*) AS ClaimStatusCode from claim_payment_info group by CLP_ClaimPaymentInformation.ClaimStatusCode_02;
+%md
+##### All Transactions which are having Total Claim Charge amount lessthan zero
+select * from claim_payment_info where CLP_ClaimPaymentInformation.TotalClaimChargeAmount_03<=0;
+%md
+##### All transactions having Claim payment Amount greater than zero
+select * from claim_payment_info where "AMT_ClaimSupplementalInformation.TotalClaimChargeAmount_02">="0";
+%md
+##### Transactions having ClaimPaymentAmount is zero
+select * from claim_payment_info where CLP_ClaimPaymentInformation.ClaimPaymentAmount_04=="0";
+%md
+##### Transactions having total premium payment amount is zero
+select * from transaction where BPR_FinancialInformation.TotalPremiumPaymentAmount_02=="0";
+%md
+##### Distinct Transaction Handling Code
+Select distinct BPR_FinancialInformation.TransactionHandlingCode_01 from transaction;
+select BPR_FinancialInformation.TransactionHandlingCode_01,count(*) AS TransactionHandlingCode from Transaction group by BPR_FinancialInformation.TransactionHandlingCode_01;
+%md
+##### Maximum Total premium payment amount
+Select BPR_FinancialInformation.TotalPremiumPaymentAmount_02
+from transaction
+order by BPR_FinancialInformation.TotalPremiumPaymentAmount_02 desc
+limit 1;
+%md
+##### Minimum Total premium payment amount
+Select BPR_FinancialInformation.TotalPremiumPaymentAmount_02
+from transaction
+order by BPR_FinancialInformation.TotalPremiumPaymentAmount_02 
+limit 1;
+%md
+##### Distinct Code Identifying Information Type
+Select distinct CodeIdentifyingInformationType_1 from group_header;
+%md
+##### Start and End date for a transaction
+Select Date_4 from group_header order by Date_4 asc limit 1;
+Select Date_4 from group_header order by Date_4 Desc limit 1;
+create widget dropdown Date_4 default "20211231"
+choices
+select distinct Date_4
+from group_header
+order by Date_4
+%md
+##### Payer Entity Identifier Code
+Select distinct N1_PayerIdentification.EntityIdentifierCode_01 from payer;
+%md
+##### Premium payer Name
+Select distinct N1_PayerIdentification.PremiumPayerName_02 from payer;
+%md
+##### Payer Response Contact AddressLine
+Select distinct N3_PayerAddress.ResponseContactAddressLine_01 from payer;
+%md
+##### Payer Contact city
+Select distinct N4_PayerCity_State_ZIPCode.AdditionalPatientInformationContactCityName_01 from payer;
+%md
+##### Payer Contact State
+Select distinct N4_PayerCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02 from payer;
+%md
+##### Payee Entity IdentifierCode
+Select distinct N1_PayeeIdentification.EntityIdentifierCode_01 from payee;
+%md
+##### Count of unique Premium Payer Name
+Select distinct count(distinct N1_PayeeIdentification.PremiumPayerName_02) from payee;
+%md
+##### Count of unique payee's city name
+Select count(Distinct N4_PayeeCity_State_ZIPCode.AdditionalPatientInformationContactCityName_01) from payee;
+%md
+##### Count of unique Payee's State name
+Select count(Distinct N4_PayeeCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02) from payee;
+%md
+##### Fetching all transactions for a particular payee's state and city
+Select count(*) from payee where N4_PayeeCity_State_ZIPCode.AdditionalPatientInformationContactCityName_01=="FRESNO" and N4_PayeeCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02=="CA";
+%md
+##### Distinct  Product Service ID qualifier
+select distinct SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 from service_payment_info;
+%md
+##### Line Item Charge Amount not equal to zero
+select * from service_payment_info where "SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01.LineItemChargeAmount_02"!='0';
+%md
+##### Monetary Amount greater than zero
+select * from service_payment_info where "SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01.MonetaryAmount_03">='0';
+%md
+##### Distinct Claim Adjustment Group Code
+select distinct CAS_ServiceAdjustment.ClaimAdjustmentGroupCode_01 from service_payment_info;
+%md
+##### Adjustment Amount greater than or equal to zero
+select * from service_payment_info where "CAS_ServiceAdjustment.AdjustmentAmount_03">='0';
+%md
+##### Distinct Code List Qualifier code
+select distinct LQ_HealthCareRemarkCodes.CodeListQualifierCode_01 from service_payment_info;
+%md
+####Aggregation Query for the given claim_id
+%sql
+SELECT CLP_ClaimPaymentInformation.PayerClaimControlNumber_07,count(CLP_ClaimPaymentInformation.PatientControlNumber_01) AS PATIENTCONTROLNUMBER,count(CLP_ClaimPaymentInformation.ClaimFrequencyCode_09) AS CLAIMFREQUENCYCODE,sum(CLP_ClaimPaymentInformation.TotalClaimChargeAmount_03) AS TOTALCLAIMCHARGEAMOUNT,sum(CLP_ClaimPaymentInformation.ClaimPaymentAmount_04) AS CLAIMPAYMENTAMT,count(CLP_ClaimPaymentInformation.ClaimStatusCode_02) AS CLAIMSTATUSCODE,count(CLP_ClaimPaymentInformation.FacilityTypeCode_08) AS FACILITYTYPECODE
+FROM claim_payment_info
+WHERE CLP_ClaimPaymentInformation.PayerClaimControlNumber_07="H328X3NG50000" 
+GROUP BY CLP_ClaimPaymentInformation.PayerClaimControlNumber_07; 
+%md
+#### For the given Patient_id
+%sql
+SELECT AllNM1.NM1_PatientName.ResponseContactIdentifier_09 as PAT_ID,count(CLP_ClaimPaymentInformation.PatientControlNumber_01) AS PATIENTCONTROLNUMBER,count(CLP_ClaimPaymentInformation.ClaimFrequencyCode_09) AS CLAIMFREQUENCYCODE,sum(CLP_ClaimPaymentInformation.TotalClaimChargeAmount_03) AS TOTALCLAIMCHARGEAMOUNT,sum(CLP_ClaimPaymentInformation.ClaimPaymentAmount_04) AS CLAIMPAYMENTAMT,count(CLP_ClaimPaymentInformation.ClaimStatusCode_02) AS CLAIMSTATUSCODE,count(CLP_ClaimPaymentInformation.FacilityTypeCode_08) AS FACILITYTYPECODE
+FROM claim_payment_info
+WHERE AllNM1.NM1_PatientName.ResponseContactIdentifier_09 ="1012237697V933546" 
+GROUP BY AllNM1.NM1_PatientName.ResponseContactIdentifier_09; 
+%md
+#### Total pay received for each payee
+select * from payee;
+select * from claim_payment_info;
+%md
+TotalClaimChargeAmount_03 -  is the amount of submitted charges this claim
+
+ClaimPaymentAmount_04 -  is the amount paid this claim.
+%md
+#### Total pay received for each payee
+Select a.N1_PayeeIdentification.PremiumPayerName_02,
+sum(b.CLP_ClaimPaymentInformation.TotalClaimChargeAmount_03)payee_submitted_charges,
+sum(b.CLP_ClaimPaymentInformation.ClaimPaymentAmount_04) Amount_paid_payee from Payee 
+as a join claim_payment_info as b on a.TransactionID=b.TransactionID 
+Group by a.N1_PayeeIdentification.PremiumPayerName_02;
+%md
+#### Total payout for each payer
+select * from payer;
+select TransactionID,sum(BPR_FinancialInformation.TotalPremiumPaymentAmount_02) as Amount from transaction group by TransactionID; 
+%md
+#### Total payout for each payer
+Select a.N1_PayerIdentification.PremiumPayerName_02,sum(b.BPR_FinancialInformation.TotalPremiumPaymentAmount_02) as Amount 
+from Payer as a JOIN transaction as b on a.TransactionID=b.TransactionID
+Group by a.N1_PayerIdentification.PremiumPayerName_02;
