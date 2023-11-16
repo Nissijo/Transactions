@@ -1,0 +1,18 @@
+SELECT a.TransactionID,
+a.ST.TransactionSetControlNumber_02 AS EDI_TRANSACTION_ID,
+FROM_UNIXTIME(UNIX_TIMESTAMP(a.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04, 'yyyyMMdd'), 'MM/dd/yy') AS CREATION_DATE,
+a.MODEL AS FILETYPE_EDIVERSION,
+a.NM1_SubmitterName.ResponseContactLastorOrganizationName_03 AS Submitter_BUSINESS_NAME,
+a.NM1_SubmitterName.ResponseContactIdentifier_09 AS Submitter_ETIN,
+a.PER_SubmitterEDIContactInformation.ResponseContactName_02 AS Submitter_CONTACT_NAME,
+a.PER_SubmitterEDIContactInformation.ResponseContactCommunicationNumber_04 AS Submitter_CONTACT_NUMBER,
+a.NM1_ReceiverName.ResponseContactLastorOrganizationName_03 AS Receiver_BUSINESS_NAME,
+a.NM1_ReceiverName.ResponseContactIdentifier_09 AS Receiver_ID,
+b.BillingID,
+b.NM1_BillingProviderName.ResponseContactLastorOrganizationName_03 AS BILLING_PROVIDER_BUSINESS_NAME,
+b.NM1_BillingProviderName.ResponseContactIdentifier_09 AS BILLING_PROVIDER_NPI,
+b.REF_BillingProviderTaxIdentification.MemberGrouporPolicyNumber_02 AS BILLING_PROVIDER_TAXID, 
+CONCAT(b.N3_BillingProviderAddress.ResponseContactAddressLine_01, ',',
+b.N4_BillingProviderCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03) AS BILLING_PROVIDER_ADDRESS
+FROM TRANSACTION a JOIN BILLING b ON a.TransactionID=b.TransactionID
+WHERE a.TransactionID = {{tranID}};
