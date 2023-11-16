@@ -1,0 +1,8 @@
+SELECT ClaimHeaderID,ClaimID, CLM_ClaimInformation.PatientControlNumber_01 AS PATIENT_CONTROL_NUMBER,
+(CLM_ClaimInformation.TotalClaimChargeAmount_02) AS BILLED_AMT,
+CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityTypeCode_01 AS FACILITY_TYPE,
+CLM_ClaimInformation.HealthCareServiceLocationInformation_05.ClaimFrequencyTypeCode_03 AS FREQUENCY,
+ALLDTP.DTP_StatementDates.DateTimePeriod_03 AS STATEMENT_DATES,
+CONCAT(NM1_AttendingProviderName.ResponseContactLastorOrganizationName_03,',',NM1_AttendingProviderName.ResponseContactFirstName_04) AS ATTENDING_PROVIDER_NAME,
+(NM1_AttendingProviderName.ResponseContactIdentifier_09) AS ATTENDING_PROVIDER_NPI
+FROM CLAIM;
