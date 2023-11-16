@@ -1,0 +1,7 @@
+SELECT ClaimID,ServiceID,SV2_InstitutionalServiceLine.LineItemChargeAmount_03 AS BILLED_AMT,
+FROM_UNIXTIME(UNIX_TIMESTAMP(DTP_Date_ServiceDate.DateTimePeriod_03, 'yyyyMMdd'), 'MM/dd/yy') AS SERVICE_DATE,
+SV2_InstitutionalServiceLine.ServiceUnitCount_05 AS UNIT,
+LX_ServiceLineNumber.AssignedNumber_01 AS SOURCE_ID,
+SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02.ProcedureCode_02 AS CPT_PROCEDURE_CODE,
+SV2_InstitutionalServiceLine.ServiceLineRevenueCode_01 AS REVENUE_CODE
+FROM SERVICE_LINE;
