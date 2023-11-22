@@ -1,0 +1,7 @@
+SELECT TransactionID,BillingID,NM1_BillingProviderName.ResponseContactLastorOrganizationName_03 AS BUSINESS_NAME,
+NM1_BillingProviderName.ResponseContactIdentifier_09 AS NPI,
+REF_BillingProviderTaxIdentification.MemberGrouporPolicyNumber_02 AS TAXID, CONCAT(N3_BillingProviderAddress.ResponseContactAddressLine_01, ',',
+N4_BillingProviderCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02,' ',
+N4_BillingProviderCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03) AS ADDRESS
+FROM billing
+WHERE TransactionID = {{transID}};

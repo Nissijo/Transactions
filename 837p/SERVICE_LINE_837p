@@ -1,0 +1,8 @@
+SELECT ClaimID,ServiceID,SV1_ProfessionalService.LineItemChargeAmount_02 AS BILLED_AMT,
+AllDTP.DTP_Date_ServiceDate.DateTimePeriod_03 AS SERVICE_DATE,
+SV1_ProfessionalService.ServiceUnitCount_04 AS MINUTES,
+LX_ServiceLineNumber.AssignedNumber_01 AS SOURCE_ID,
+SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.procedurecode_02 AS CPT_PROCEDURE_CODE,
+SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureModifier_03 AS MODIFIERS
+FROM SERVICE_LINE
+WHERE ClaimID = {{CLAIMID}};

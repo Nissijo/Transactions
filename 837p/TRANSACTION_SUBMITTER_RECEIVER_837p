@@ -1,0 +1,10 @@
+SELECT ST.TransactionSetControlNumber_02 AS EDI_TRANSACTION_ID,
+FROM_UNIXTIME(UNIX_TIMESTAMP(BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04, 'yyyyMMdd'), 'MM/dd/yy') AS CREATION_DATE,
+MODEL AS FILETYPE_EDIVERSION,
+(NM1_SubmitterName.ResponseContactLastorOrganizationName_03) AS SUBMITTER_BUSINESS_NAME,
+NM1_SubmitterName.ResponseContactIdentifier_09 AS SUBMITTER_ETIN,
+(PER_SubmitterEDIContactInformation.ResponseContactName_02) AS SUBMITTER_CONTACT_NAME,
+(PER_SubmitterEDIContactInformation.ResponseContactCommunicationNumber_04) AS SUBMITTER_CONTACT_NUMBER,
+NM1_ReceiverName.ResponseContactLastorOrganizationName_03 AS RECEIVER_BUSINESS_NAME,
+NM1_ReceiverName.ResponseContactIdentifier_09 AS RECEIVER_ID
+FROM transaction;
