@@ -1,0 +1,27 @@
+SHOW tables;
+Select * from billing;
+desc billing;
+
+select * from bronze;
+desc bronze;
+
+select * from claim;
+desc claim;
+
+select * from claim_level_adjustment;
+desc claim_level_adjustment;
+
+select * from group_header;
+desc group_header;
+
+select * from patient_claim_header;
+desc patient_claim_header;
+
+select * from service_line;
+desc service_line;
+
+select * from subscriber_claim_header;
+desc subscriber_claim_header;
+
+select * from transaction;
+desc transaction;

@@ -1,0 +1,5 @@
+SELECT DISTINCT ClaimID,ServiceID,SV3_DentalService.LineItemChargeAmount_02 AS BILLED_AMT,
+LX_ServiceLineNumber.AssignedNumber_01 AS SOURCE_ID,
+SV3_DentalService.CompositeMedicalProcedureIdentifier_01.procedurecode_02 AS CPT_PROCEDURE_CODE
+FROM SERVICE_LINE
+WHERE ClaimID = {{CLAIMID_d}};

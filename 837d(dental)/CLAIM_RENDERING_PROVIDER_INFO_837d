@@ -1,0 +1,6 @@
+SELECT DISTINCT ClaimID,ClaimHeaderID,CLM_ClaimInformation.PatientControlNumber_01 AS PATIENT_CONTROL_NUMBER,
+(CLM_ClaimInformation.TotalClaimChargeAmount_02) AS TOTAL_BILLED_AMT,
+CONCAT(NM1_RenderingProviderName.ResponseContactLastorOrganizationName_03,',',NM1_RenderingProviderName.ResponseContactFirstName_04) AS RENDERING_PROVIDER_NAME,
+(REF_RenderingProviderSecondaryIdentification.MemberGrouporPolicyNumber_02) AS RENDERING_PROVIDER_NPI
+FROM CLAIM
+WHERE ClaimID={{CLAIMID_d}};

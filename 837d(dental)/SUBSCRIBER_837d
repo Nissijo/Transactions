@@ -1,0 +1,9 @@
+SELECT DISTINCT CONCAT(NM1_SubscriberName.ResponseContactLastorOrganizationName_03,',',NM1_SubscriberName.ResponseContactFirstName_04) AS SUBSCRIBER_NAME,
+NM1_SubscriberName.ResponseContactIdentifier_09 AS SUBSCRIBER_MEMBER_ID,
+(DMG_SubscriberDemographicinformation.DependentGenderCode_03) AS SUBSCRIBER_GENDER,
+FROM_UNIXTIME(UNIX_TIMESTAMP(DMG_SubscriberDemographicinformation.DependentBirthDate_02, 'yyyyMMdd'), 'MM/dd/yy') AS SUBSCRIBER_DOB,
+CONCAT(N3_SubscriberAddress.ResponseContactAddressLine_01,',',N4_SubscriberCity_State_ZIPCode.AdditionalPatientInformationContactCityName_01,',',
+N4_SubscriberCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02,',',
+N4_SubscriberCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03) AS SUBSCRIBER_ADDRESS,
+(SBR_SubscriberInformation.PayerResponsibilitySequenceNumberCode_01) SUBSCRIBER_PAYER_SEQUENCE
+FROM subscriber_claim_header; 

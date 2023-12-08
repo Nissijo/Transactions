@@ -1,0 +1,2 @@
+SELECT NM1_ReceiverName.ResponseContactLastorOrganizationName_03 AS BUSINESS_NAME,NM1_ReceiverName.ResponseContactIdentifier_09 AS ID
+FROM transaction;

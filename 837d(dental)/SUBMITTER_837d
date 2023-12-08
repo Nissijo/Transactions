@@ -1,0 +1,5 @@
+SELECT distinct (NM1_SubmitterName.ResponseContactLastorOrganizationName_03) AS BUSINESS_NAME,
+NM1_SubmitterName.ResponseContactIdentifier_09 AS ETIN,
+(PER_SubmitterEDIContactInformation.ResponseContactName_02) AS CONTACT_NAME,
+(PER_SubmitterEDIContactInformation.ResponseContactCommunicationNumber_04) AS CONTACT_NUMBER
+FROM transaction;
