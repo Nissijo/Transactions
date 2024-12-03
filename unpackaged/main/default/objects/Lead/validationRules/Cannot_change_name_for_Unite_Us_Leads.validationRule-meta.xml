@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_name_for_Unite_Us_Leads</fullName>
+    <active>true</active>
+    <description>If Lead Source = Unite US, do not allow users to change First Name or Last Name</description>
+    <errorConditionFormula>TEXT(LeadSource)=&quot;Unite Us&quot; &amp;&amp; OR(ISCHANGED(FirstName),ISCHANGED(LastName))</errorConditionFormula>
+    <errorMessage>You  cannot adjust the First or Last Name for Leads that came in from Unite US</errorMessage>
+</ValidationRule>

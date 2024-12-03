@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Benefit_Year__c</fullName>
+    <label>Benefit Year</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calender Year</fullName>
+                <default>false</default>
+                <label>Calender Year</label>
+            </value>
+            <value>
+                <fullName>Contract Year</fullName>
+                <default>false</default>
+                <label>Contract Year</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

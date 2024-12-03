@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Opportunities_for_MA</fullName>
+    <active>true</active>
+    <description>Validation Rule will only allow New Opportunities for Medicare Advantage</description>
+    <errorConditionFormula>AND(ISPICKVAL(Type,&#39;Renewal&#39;),
+ISPICKVAL(LOB__c,&#39;Medicare Advantage&#39;),
+$Profile.Name=&#39;Quartz Individual&#39;,
+RecordType.Name=&#39;Individual&#39;)</errorConditionFormula>
+    <errorMessage>You cannot manually create renewal opportunities for MA. Please contact Customer Success</errorMessage>
+</ValidationRule>

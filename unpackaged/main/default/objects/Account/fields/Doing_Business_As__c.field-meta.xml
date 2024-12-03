@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Doing_Business_As__c</fullName>
+    <description>DBA(Doing Business As) field to differentiate between the legal business name and the &quot;friendly&quot; name that Quartz uses regularly</description>
+    <externalId>false</externalId>
+    <label>Doing Business As</label>
+    <length>150</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

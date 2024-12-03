@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_cannot_be_changed</fullName>
+    <active>true</active>
+    <description>When CorpId is populated, do not let user edit the Account Name
+When PatientId is populated, do not let user edit the First Name or Last Name field
+When Agencyid is populated, do not let user edit the Account Name</description>
+    <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&#39;Integrations&#39;)),
+(ISBLANK(Corp_ID__c)=FALSE&amp;&amp;RecordType.Name=&quot;Group&quot;&amp;&amp;ISCHANGED(Name))|| (ISBLANK(Patient_ID__c)=FALSE&amp;&amp;RecordType.Name=&quot;Member&quot;&amp;&amp;(OR(ISCHANGED(FirstName),ISCHANGED(LastName))))|| (ISBLANK(Agency_ID__c)=FALSE&amp;&amp;RecordType.Name=&quot;Agency&quot;&amp;&amp;ISCHANGED(Name)))</errorConditionFormula>
+    <errorMessage>You cannot change the Account Name. Please Contact Customer Support to have it changed in HealthLInk</errorMessage>
+</ValidationRule>

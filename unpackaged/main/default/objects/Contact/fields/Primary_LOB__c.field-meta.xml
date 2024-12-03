@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_LOB__c</fullName>
+    <label>Primary LOB</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ETF</fullName>
+                <default>false</default>
+                <label>ETF</label>
+            </value>
+            <value>
+                <fullName>Individual</fullName>
+                <default>false</default>
+                <label>Individual</label>
+            </value>
+            <value>
+                <fullName>Large Group</fullName>
+                <default>false</default>
+                <label>Large Group</label>
+            </value>
+            <value>
+                <fullName>Small Group</fullName>
+                <default>false</default>
+                <label>Small Group</label>
+            </value>
+            <value>
+                <fullName>Badgercare</fullName>
+                <default>false</default>
+                <label>Badgercare</label>
+            </value>
+            <value>
+                <fullName>Medicaid</fullName>
+                <default>false</default>
+                <label>Medicaid</label>
+            </value>
+            <value>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+                <label>Medicare Advantage</label>
+            </value>
+            <value>
+                <fullName>Medicare Advantage D-SNP</fullName>
+                <default>false</default>
+                <label>Medicare Advantage D-SNP</label>
+            </value>
+            <value>
+                <fullName>Medicare Supplement</fullName>
+                <default>false</default>
+                <label>Medicare Supplement</label>
+            </value>
+            <value>
+                <fullName>Self Funded</fullName>
+                <default>false</default>
+                <label>Self Funded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

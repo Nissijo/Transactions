@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Information_Final_Rates__c</fullName>
+    <label>Additional Information(Final Rates)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 Page Applications</fullName>
+                <default>false</default>
+                <label>2 Page Applications</label>
+            </value>
+            <value>
+                <fullName>9 Page Applications</fullName>
+                <default>false</default>
+                <label>9 Page Applications</label>
+            </value>
+            <value>
+                <fullName>Claims Experience</fullName>
+                <default>false</default>
+                <label>Claims Experience</label>
+            </value>
+            <value>
+                <fullName>Enrollment by Plan</fullName>
+                <default>false</default>
+                <label>Enrollment by Plan</label>
+            </value>
+            <value>
+                <fullName>High Claimants</fullName>
+                <default>false</default>
+                <label>High Claimants</label>
+            </value>
+            <value>
+                <fullName>Renewal Calculation</fullName>
+                <default>false</default>
+                <label>Renewal Calculation</label>
+            </value>
+            <value>
+                <fullName>Renewal Rates</fullName>
+                <default>false</default>
+                <label>Renewal Rates</label>
+            </value>
+            <value>
+                <fullName>Top Provider List</fullName>
+                <default>false</default>
+                <label>Top Provider List</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

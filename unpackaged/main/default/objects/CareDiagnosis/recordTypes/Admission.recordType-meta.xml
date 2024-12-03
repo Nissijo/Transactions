@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admission</fullName>
+    <active>true</active>
+    <description>Record type for notification and approval of an inpatient admission.</description>
+    <label>Admission</label>
+    <picklistValues>
+        <picklist>CodeType</picklist>
+        <values>
+            <fullName>ICD-10-CM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DischargeCodeType</picklist>
+        <values>
+            <fullName>ICD-10-CM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ModifiedCodeType</picklist>
+        <values>
+            <fullName>ICD-10-CM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

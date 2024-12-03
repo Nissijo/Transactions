@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Conversion_Birthdate__c</fullName>
+    <description>Custom field to store birthdate during the lead conversion, since it is not supported in the standard mapping</description>
+    <label>Lead Conversion - Birthdate</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

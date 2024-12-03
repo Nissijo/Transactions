@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACA_Rating_Area__c</fullName>
+    <description>Affordable Care Act Rating Area of the County</description>
+    <label>ACA Rating Area</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rating Area 1</fullName>
+                <default>false</default>
+                <label>Rating Area 1</label>
+            </value>
+            <value>
+                <fullName>Rating Area 2</fullName>
+                <default>false</default>
+                <label>Rating Area 2</label>
+            </value>
+            <value>
+                <fullName>Rating Area 3</fullName>
+                <default>false</default>
+                <label>Rating Area 3</label>
+            </value>
+            <value>
+                <fullName>Rating Area 4</fullName>
+                <default>false</default>
+                <label>Rating Area 4</label>
+            </value>
+            <value>
+                <fullName>Rating Area 5</fullName>
+                <default>false</default>
+                <label>Rating Area 5</label>
+            </value>
+            <value>
+                <fullName>Rating Area 6</fullName>
+                <default>false</default>
+                <label>Rating Area 6</label>
+            </value>
+            <value>
+                <fullName>Rating Area 7</fullName>
+                <default>false</default>
+                <label>Rating Area 7</label>
+            </value>
+            <value>
+                <fullName>Rating Area 8</fullName>
+                <default>false</default>
+                <label>Rating Area 8</label>
+            </value>
+            <value>
+                <fullName>Rating Area 9</fullName>
+                <default>false</default>
+                <label>Rating Area 9</label>
+            </value>
+            <value>
+                <fullName>Rating Area 10</fullName>
+                <default>false</default>
+                <label>Rating Area 10</label>
+            </value>
+            <value>
+                <fullName>Rating Area 11</fullName>
+                <default>false</default>
+                <label>Rating Area 11</label>
+            </value>
+            <value>
+                <fullName>Rating Area 12</fullName>
+                <default>false</default>
+                <label>Rating Area 12</label>
+            </value>
+            <value>
+                <fullName>Rating Area 13</fullName>
+                <default>false</default>
+                <label>Rating Area 13</label>
+            </value>
+            <value>
+                <fullName>Rating Area 14</fullName>
+                <default>false</default>
+                <label>Rating Area 14</label>
+            </value>
+            <value>
+                <fullName>Rating Area 15</fullName>
+                <default>false</default>
+                <label>Rating Area 15</label>
+            </value>
+            <value>
+                <fullName>Rating Area 16</fullName>
+                <default>false</default>
+                <label>Rating Area 16</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Coverage_Activation_Date</fullName>
+    <active>true</active>
+    <description>Makes sure that coverage activation date is required for all closed won opportunitiesIS</description>
+    <errorConditionFormula>ISPICKVAL(StageName,&#39;Closed Won&#39;)&amp;&amp;ISBLANK(Coverage_Activation_Date__c)</errorConditionFormula>
+    <errorDisplayField>Coverage_Activation_Date__c</errorDisplayField>
+    <errorMessage>Coverage Activation Date is required before updating an opportunity to closed won. Please ensure the field is populated correctly.</errorMessage>
+</ValidationRule>

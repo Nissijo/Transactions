@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used to show the relationship between a Purchaser Plan and a Group account(Purchaser Group from EDW)</description>
+    <label>Group</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Purchaser Plan Associations</relationshipLabel>
+    <relationshipName>Purchaser_Plan_Associations</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

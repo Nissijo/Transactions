@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_For_Conversion_Birthdate</fullName>
+    <active>true</active>
+    <description>Birth Date is required for converting an individual lead, in order for age to be present</description>
+    <errorConditionFormula>AND(IsConverted,
+RecordType.Name=&quot;Individual&quot;,
+ISBLANK(HealthCloudGA__BirthDate__c))</errorConditionFormula>
+    <errorMessage>Birth Date is required to convert an individual lead</errorMessage>
+</ValidationRule>

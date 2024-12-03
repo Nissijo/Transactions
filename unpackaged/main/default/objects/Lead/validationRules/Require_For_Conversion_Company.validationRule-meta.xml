@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_For_Conversion_Company</fullName>
+    <active>true</active>
+    <description>Company is required for Agent Lead Record Type to be converted</description>
+    <errorConditionFormula>AND(IsConverted,
+RecordType.Name=&quot;Agent&quot;,
+ISBLANK(Company))</errorConditionFormula>
+    <errorMessage>Company is required to convert an Agent lead</errorMessage>
+</ValidationRule>

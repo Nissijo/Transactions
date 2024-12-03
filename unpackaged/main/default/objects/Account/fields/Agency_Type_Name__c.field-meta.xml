@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_Type_Name__c</fullName>
+    <label>Agency Type Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EMPLOYER GROUP ENROLLMENT</fullName>
+                <default>false</default>
+                <label>EMPLOYER GROUP ENROLLMENT</label>
+            </value>
+            <value>
+                <fullName>PRE-CERTIFICATION</fullName>
+                <default>false</default>
+                <label>PRE-CERTIFICATION</label>
+            </value>
+            <value>
+                <fullName>UTILIZATION REVIEW</fullName>
+                <default>false</default>
+                <label>UTILIZATION REVIEW</label>
+            </value>
+            <value>
+                <fullName>ROI PAYER</fullName>
+                <default>false</default>
+                <label>ROI PAYER</label>
+            </value>
+            <value>
+                <fullName>INVALID OR NOTFOUND</fullName>
+                <default>false</default>
+                <label>INVALID OR NOTFOUND</label>
+            </value>
+            <value>
+                <fullName>NOT SPECIFIED</fullName>
+                <default>false</default>
+                <label>NOT SPECIFIED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

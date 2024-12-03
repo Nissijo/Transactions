@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Declined_to_Quote__c</fullName>
+    <description>used for Small Groups</description>
+    <label>Reason Declined to Quote</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Base Rates &gt; Renewal</fullName>
+                <default>false</default>
+                <label>Base Rates &gt; Renewal</label>
+            </value>
+            <value>
+                <fullName>Competitive Base/CURV &lt;5% Savings</fullName>
+                <default>false</default>
+                <label>Competitive Base/CURV &lt;5% Savings</label>
+            </value>
+            <value>
+                <fullName>CURV - Insufficient Data</fullName>
+                <default>false</default>
+                <label>CURV - Insufficient Data</label>
+            </value>
+            <value>
+                <fullName>CURV Score &gt; Renewal</fullName>
+                <default>false</default>
+                <label>CURV Score &gt; Renewal</label>
+            </value>
+            <value>
+                <fullName>Field U/W</fullName>
+                <default>false</default>
+                <label>Field U/W</label>
+            </value>
+            <value>
+                <fullName>Insufficient Premium Savings</fullName>
+                <default>false</default>
+                <label>Insufficient Premium Savings</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PPO Risk Exposure</fullName>
+                <default>false</default>
+                <label>PPO Risk Exposure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

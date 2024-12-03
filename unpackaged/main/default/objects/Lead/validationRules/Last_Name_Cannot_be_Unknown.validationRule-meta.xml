@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Name_Cannot_be_Unknown</fullName>
+    <active>true</active>
+    <description>Last name cannot  be unknown when converting group leads, unknown can only be used as a placeholder when creating the lead</description>
+    <errorConditionFormula>AND(IsConverted,RecordType.Name=&quot;Group&quot;,CONTAINS(LastName,&quot;Unknown&quot;))</errorConditionFormula>
+    <errorMessage>Last Name cannot be Unknown, please update with the correct Last Name</errorMessage>
+</ValidationRule>
